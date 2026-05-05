@@ -1,0 +1,395 @@
+/* PaymentChart.css — page-specific styles only; tokens come from Globals.css */
+
+/* ── Referral section — mini widget ── */
+.pc-mini-ref-section {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.pc-mini-ref-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.pc-mini-ref-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.pc-mini-ref-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 28px;
+  align-items: center;
+  gap: 10px;
+}
+.pc-mini-ref-site {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pc-mini-ref-bar-wrap {
+  background: var(--border);
+  border-radius: 100px;
+  height: 6px;
+  overflow: hidden;
+}
+.pc-mini-ref-bar {
+  height: 100%;
+  border-radius: 100px;
+  background: var(--accent);
+  opacity: 0.5;
+  transition: width .6s cubic-bezier(.16,1,.3,1);
+}
+.pc-mini-ref-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  text-align: right;
+}
+
+/* ── Referral table — full page ── */
+.pc-ref-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.pc-ref-header {
+  display: grid;
+  grid-template-columns: 220px 1fr 60px 60px;
+  gap: 12px;
+  align-items: center;
+  padding: 0 8px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.pc-ref-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 60px 60px;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 8px;
+  border-radius: var(--radius-sm);
+  transition: background .15s;
+}
+.pc-ref-row:hover { background: var(--bg-base); }
+.pc-ref-site {
+  display: flex;
+  align-items: center;
+}
+.pc-ref-bar-wrap {
+  background: var(--border);
+  border-radius: 100px;
+  height: 7px;
+  overflow: hidden;
+}
+.pc-ref-bar {
+  height: 100%;
+  border-radius: 100px;
+  background: var(--accent);
+  opacity: 0.55;
+  transition: width .7s cubic-bezier(.16,1,.3,1);
+}
+.pc-ref-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  text-align: right;
+}
+.pc-ref-share {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-align: right;
+}
+.pc-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  gap: 14px;
+}
+.pc-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: pc-spin .7s linear infinite;
+}
+@keyframes pc-spin { to { transform: rotate(360deg); } }
+
+/* ── Chart grid: donut + bar side by side ── */
+.pc-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (max-width: 860px) {
+  .pc-chart-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Panel (shared card shell) ── */
+.pc-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s;
+}
+.pc-panel:hover { box-shadow: var(--shadow-md); }
+
+.pc-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.pc-panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--text-secondary);
+}
+
+/* ── Donut legend rows ── */
+.pc-legend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  cursor: default;
+  transition: background .15s, opacity .2s;
+}
+.pc-legend-row:hover { background: var(--bg-base); }
+
+/* ── Method detail cards ── */
+.pc-method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+.pc-method-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--mc, var(--accent));
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s, transform .15s;
+}
+.pc-method-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.pc-mc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.pc-mc-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+.pc-mc-share {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+.pc-mc-value {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  margin-bottom: 14px;
+  letter-spacing: -.3px;
+}
+.pc-mc-stats {
+  display: flex;
+  gap: 20px;
+}
+.pc-mc-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+.pc-mc-stat-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+/* ── Mini payment widget (WebOrders bottom) ── */
+.pc-mini-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px 16px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 24px;
+  cursor: pointer;
+  transition: box-shadow .2s, border-color .2s;
+  color: inherit;
+  user-select: none;
+}
+.pc-mini-wrap:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+/* top bar: title + inline stats */
+.pc-mini-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+.pc-mini-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-right: 10px;
+}
+.pc-mini-cta {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.pc-mini-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.pc-mini-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 16px;
+}
+.pc-mini-stat:first-child { padding-left: 0; }
+.pc-mini-stat-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--border);
+}
+.pc-mini-stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.pc-mini-stat-val {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+.pc-mini-stat-val.accent { color: var(--accent); }
+
+/* body: pie + legend side by side */
+.pc-mini-body {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* hover tooltip bubble centered below pie */
+.pc-mini-tooltip {
+  position: absolute;
+  bottom: -52px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border: 1.5px solid;
+  border-radius: var(--radius-md);
+  padding: 5px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* legend grid — wraps tightly next to pie */
+.pc-mini-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 6px 12px;
+  flex: 1;
+  min-width: 140px;
+}
+.pc-mini-leg-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  transition: background .15s, opacity .18s;
+  cursor: default;
+}
+.pc-mini-leg-item:hover { background: var(--bg-base); }
+.pc-mini-leg-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.pc-mini-leg-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.pc-mini-leg-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.pc-mini-leg-val {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  line-height: 1.3;
+}
+.pc-mini-leg-pct {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}

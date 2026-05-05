@@ -1,0 +1,773 @@
+/* EditParts.css — page-specific only */
+
+/* ── Tab bar ── */
+.ep-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 6px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+}
+.ep-tab {
+  flex: 1;
+  min-width: 100px;
+  padding: 9px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background .18s, color .18s;
+  white-space: nowrap;
+}
+.ep-tab:hover { background: var(--bg-base); color: var(--text-primary); }
+.ep-tab.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(79,110,247,.3);
+}
+
+/* ── Content wrapper ── */
+.ep-content { animation: fadeUp .25s ease both; }
+
+/* ── Two-column product layout ── */
+.ep-product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 960px) {
+  .ep-product-grid { grid-template-columns: 1fr; }
+  .ep-tabs { gap: 3px; }
+  .ep-tab { font-size: 12px; padding: 8px 10px; }
+}
+
+.ep-col { display: flex; flex-direction: column; gap: 14px; }
+
+/* ── Section cards ── */
+.ep-section-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.ep-section-card:hover { box-shadow: var(--shadow-md); }
+
+.ep-section-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  border-bottom: 1.5px solid var(--border);
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+.ep-section-body { padding: 4px 0; }
+
+/* ── Main info table ── */
+.ep-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.ep-table--4col .ep-td-label { width: 22%; }
+.ep-table--4col .ep-td-val   { width: 28%; }
+
+.ep-td-label {
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.ep-td-val {
+  padding: 7px 12px;
+  font-size: 13px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  word-break: break-word;
+}
+.ep-table tr:last-child .ep-td-label,
+.ep-table tr:last-child .ep-td-val { border-bottom: none; }
+
+.ep-table tr:hover .ep-td-label,
+.ep-table tr:hover .ep-td-val { background: var(--bg-base); }
+
+/* Shaded label cell */
+.ep-td-shade { background: var(--bg-base); }
+
+/* Center aligned value cell */
+.ep-td-center { text-align: center; }
+
+/* Accent (price) value */
+.ep-td-accent {
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* Mono value */
+.ep-td-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+}
+
+/* Warning (weight) */
+.ep-td-warn { color: var(--warning, #f59e0b); font-weight: 600; }
+
+/* Uppercase text */
+.ep-text-upper { text-transform: uppercase; font-size: 12px; }
+
+/* ── Links ── */
+.ep-link-blue {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.ep-link-blue:hover { text-decoration: underline; }
+
+/* ── FREE shipping badge ── */
+.ep-free-badge {
+  display: inline-block;
+  background: var(--success-light, #d1fae5);
+  color: var(--success, #10b981);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+  border: 1px solid #a7f3d0;
+}
+
+/* ── Yes/No colored values ── */
+.ep-yn-yes {
+  color: var(--success, #10b981);
+  font-weight: 600;
+}
+.ep-yn-no {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* ── Vendor display ── */
+.ep-vendor-display {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: .2px;
+}
+
+/* ── Product image card ── */
+.ep-image-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+.ep-product-img {
+  max-width: 100%;
+  max-height: 220px;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  transition: transform .3s ease;
+}
+.ep-product-img:hover { transform: scale(1.04); }
+
+/* ── Misc ── */
+.ep-mono { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+.ep-link { color: var(--accent); font-size: 13px; font-weight: 600; text-decoration: none; }
+.ep-link:hover { text-decoration: underline; }
+
+/* ── Price shopper ── */
+.ep-price-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.ep-price-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border);
+}
+.ep-price-table-wrap { overflow-x: auto; }
+.ep-price-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ep-price-table thead tr { background: var(--bg-base); border-bottom: 2px solid var(--border); }
+.ep-price-table th { padding: 10px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); }
+.ep-price-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.ep-price-row:last-child td { border-bottom: none; }
+.ep-price-row:hover td { background: var(--bg-base); }
+.ep-price-row.lowest td { background: rgba(79,110,247,.06); }
+.ep-price-row.match  td { background: rgba(16,185,129,.06); }
+.ep-vendor-name { font-weight: 700; font-size: 12px; color: var(--text-primary); }
+.ep-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 100px; letter-spacing: .3px; }
+.ep-badge-blue  { background: var(--accent-light); color: var(--accent); }
+.ep-badge-green { background: var(--success-light); color: var(--success); border: 1px solid #a7f3d0; }
+.ep-cost        { font-weight: 700; font-family: var(--font-mono); font-size: 13px; color: var(--text-primary); }
+.ep-cost-low    { color: var(--accent); }
+.ep-cost-match  { color: var(--success); }
+.ep-qty-ok   { font-weight: 700; color: var(--success); font-family: var(--font-mono); }
+.ep-qty-none { font-weight: 700; color: var(--danger);  font-family: var(--font-mono); }
+
+/* ── Realtime ── */
+.ep-realtime { display: flex; flex-direction: column; gap: 16px; }
+.ep-realtime-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ep-realtime-table th { padding: 9px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); background: var(--bg-base); border-bottom: 2px solid var(--border); text-align: left; }
+.ep-realtime-table td { padding: 9px 16px; border-bottom: 1px solid var(--border); }
+.ep-realtime-table tr:last-child td { border-bottom: none; }
+.ep-realtime-table tr:hover td { background: var(--bg-base); }
+
+/* ── Technote ── */
+.ep-technote { display: flex; flex-direction: column; gap: 16px; }
+.ep-technote-marketing { padding: 14px 18px; font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── Old ep-row (technote) ── */
+.ep-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 18px;
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.ep-row:last-child { border-bottom: none; }
+.ep-row:hover { background: var(--bg-base); }
+.ep-row-label { font-size: 12px; font-weight: 600; color: var(--text-muted); white-space: nowrap; flex-shrink: 0; min-width: 130px; }
+.ep-row-value { font-size: 13px; color: var(--text-primary); text-align: right; word-break: break-word; }
+
+/* ── Placeholder ── */
+.ep-tab-placeholder {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--text-muted);
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.ep-tab-placeholder .od-spinner { margin: 0 auto; }
+
+/* ── Mobile optimizations ── */
+@media (max-width: 768px) {
+
+  /* Stack columns */
+  .ep-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tabs scroll horizontally */
+  .ep-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 4px;
+  }
+  .ep-tab {
+    flex: 0 0 auto;
+    font-size: 12px;
+    padding: 8px 12px;
+    min-width: auto;
+  }
+
+  /* 4-col tables become 2-col on mobile */
+  .ep-table--4col tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .ep-table--4col .ep-td-label,
+  .ep-table--4col .ep-td-val {
+    width: auto;
+  }
+
+  /* Single col tables go full width label + value stacked */
+  .ep-table:not(.ep-table--4col) tbody tr {
+    display: flex;
+    flex-direction: column;
+  }
+  .ep-table:not(.ep-table--4col) .ep-td-label {
+    padding-bottom: 2px;
+    border-bottom: none;
+  }
+  .ep-table:not(.ep-table--4col) .ep-td-val {
+    padding-top: 2px;
+    text-align: left;
+  }
+
+  /* Smaller image */
+  .ep-product-img { max-height: 160px; }
+
+  /* Header stat chips wrap tighter */
+  .stat-chip { min-width: 70px !important; padding: 8px 10px !important; }
+  .stat-chip-value { font-size: 14px; }
+
+  /* Price table scrolls */
+  .ep-price-table-wrap { overflow-x: auto; }
+  .ep-price-table { min-width: 480px; }
+
+  /* Section head smaller */
+  .ep-section-head { font-size: 11px; padding: 8px 12px; }
+
+  /* Table cells tighter */
+  .ep-td-label, .ep-td-val { padding: 6px 10px; font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  /* On very small screens, 4-col becomes fully stacked */
+  .ep-table--4col tbody tr {
+    grid-template-columns: 1fr;
+  }
+  .ep-table--4col .ep-td-label { border-bottom: none; padding-bottom: 2px; }
+  .ep-table--4col .ep-td-val   { padding-top: 2px; border-bottom: 1px solid var(--border); }
+}
+/* ── Edit button ─────────────────────────────────────────────────── */
+.ep-edit-btn {
+  background: var(--accent);
+  color: #1a1a1a;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.ep-edit-btn:hover { opacity: 0.8; }
+
+/* ── Modal overlay ───────────────────────────────────────────────── */
+.ep-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.ep-modal {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 480px;
+  max-width: 95vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.ep-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.ep-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+.ep-modal-close:hover { color: var(--text); }
+
+.ep-modal-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.ep-modal-foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  justify-content: flex-end;
+}
+
+.ep-modal-cancel {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 7px 16px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.ep-modal-cancel:hover { background: var(--surface-3); }
+
+.ep-modal-save {
+  background: var(--accent);
+  border: none;
+  color: #1a1a1a;
+  border-radius: var(--radius-sm);
+  padding: 7px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.ep-modal-save:disabled { opacity: 0.5; cursor: not-allowed; }
+.ep-modal-save:hover:not(:disabled) { opacity: 0.85; }
+
+/* ── Toggle button (Yes/No) ──────────────────────────────────────── */
+.ep-toggle-btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  min-width: 70px;
+  transition: background .15s;
+}
+.ep-toggle-btn.yes {
+  background: #dcfce7;
+  color: #16a34a;
+}
+.ep-toggle-btn.no {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ── Input field in modal ────────────────────────────────────────── */
+.ep-input {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 5px 10px;
+  font-size: 13px;
+  width: 120px;
+}
+.ep-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ── Save message ────────────────────────────────────────────────── */
+.ep-save-msg {
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: auto;
+}
+.ep-save-msg.ok { color: #16a34a; }
+.ep-save-msg.err { color: #dc2626; }
+
+/* Editable value wrapper */
+.ep-editable-val {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 4px;
+  transition: background 0.15s;
+}
+.ep-editable-val:hover {
+  background: var(--surface-3);
+}
+.ep-edit-pencil {
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.ep-editable-val:hover .ep-edit-pencil {
+  opacity: 1;
+}
+/* ── Fix modal overlay + modal shell ─────────────────────────────── */
+.epm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.epm-modal {
+  position: relative;
+  background: #1e1e2e; /* fallback if var(--surface-1) is broken */
+  background: var(--bg-card, #1e1e2e);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg, 12px);
+  width: 420px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.epm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1.5px solid var(--border);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--bg-base, #161622);
+  border-radius: var(--radius-lg, 12px) var(--radius-lg, 12px) 0 0;
+}
+
+.epm-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+.epm-close:hover { color: var(--text-primary); }
+
+.epm-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.epm-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1.5px solid var(--border);
+  background: var(--bg-base, #161622);
+  border-radius: 0 0 var(--radius-lg, 12px) var(--radius-lg, 12px);
+}
+
+.epm-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.epm-row-info {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.epm-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.epm-value-static {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.epm-input {
+  background: var(--bg-base, #161622);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm, 6px);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color .15s;
+}
+.epm-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.epm-select {
+  background: var(--bg-base, #161622);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm, 6px);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.epm-select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.epm-error {
+  font-size: 12px;
+  font-weight: 600;
+  color: #dc2626;
+  padding: 8px 12px;
+  background: #fee2e2;
+  border-radius: var(--radius-sm, 6px);
+}
+
+.epm-btn-cancel {
+  background: var(--bg-base);
+  border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm, 6px);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s;
+}
+.epm-btn-cancel:hover { background: var(--surface-3); }
+
+.epm-btn-save {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  border-radius: var(--radius-sm, 6px);
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.epm-btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+.epm-btn-save:hover:not(:disabled) { opacity: 0.85; }
+
+/* ── Pricing Modals ── */
+.ep-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.ep-modal {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 560px;
+  max-width: 95vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.ep-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1.5px solid var(--border);
+  background: var(--bg-base);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.ep-modal-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+.ep-modal-close:hover { color: var(--text-primary); }
+
+.ep-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ── Modal buttons ── */
+.epm-btn {
+  background: var(--bg-base);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.epm-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.epm-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.epm-btn-primary:hover:not(:disabled) { opacity: 0.85; }
+.epm-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Ba-msg reuse ── */
+.ba-msg {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+}
+.ba-msg.ok  { background: var(--success-light); color: var(--success); }
+.ba-msg.err { background: #fee2e2; color: #dc2626; }

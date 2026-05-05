@@ -1,0 +1,152 @@
+.scroll-buttons {
+    position: fixed; /* Fixed positioning */
+    right: 20px; /* Distance from the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact center */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+  }
+  
+  .scroll-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 5px 10px; /* Smaller padding */
+    cursor: pointer;
+    margin: 5px 0; /* Margin between buttons */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 14px; /* Adjust font size */
+  }
+  
+  .scroll-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  /* WebOrders-specific styles only */
+
+.orders-list { display: flex; flex-direction: column; gap: 12px; }
+.order-card * {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+.order-card {
+  cursor: pointer;
+}
+.order-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow .2s, border-color .2s, transform .15s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.order-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: inherit;
+}
+.order-card.deleted {
+  border-color: var(--danger);
+  background: var(--danger-light);
+}
+.order-card.deleted .order-card-head { background: #fde8e8; }
+
+.order-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border);
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.referral-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+.order-card.deleted .referral-badge {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.deleted-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--danger);
+  color: #fff;
+  letter-spacing: .4px;
+}
+
+.order-card-body {
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .order-card-body { grid-template-columns: 1fr; }
+}
+
+.order-meta p { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; line-height: 1.4; }
+.order-meta strong { color: var(--text-primary); font-weight: 600; }
+
+.order-num {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  margin-bottom: 10px;
+  display: block;
+}
+.order-num:hover { text-decoration: underline; }
+
+.product-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.product-img {
+  width: 48px; height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.product-name { font-size: 13px; color: var(--text-primary); font-weight: 500; text-decoration: none; }
+.product-name:hover { color: var(--accent); text-decoration: underline; }
+.qty-cost { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.qty-cost strong { color: var(--text-secondary); }
+
+.total-box {
+  background: var(--accent-light);
+  border: 1.5px solid #c7d2fc;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  text-align: center;
+  min-width: 130px;
+}
+.order-card.deleted .total-box { background: var(--danger-light); border-color: #fca5a5; }
+.total-box-label {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .6px;
+  color: var(--text-muted); margin-bottom: 6px;
+}
+.total-box-value {
+  font-size: 20px; font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+.order-card.deleted .total-box-value { color: var(--danger); }

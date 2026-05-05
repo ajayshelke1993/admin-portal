@@ -1,0 +1,182 @@
+.fip-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .fip-layout { grid-template-columns: 1fr; }
+}
+
+.fip-sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+.fip-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.fip-card-head {
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  border-bottom: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.fip-card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Search/Add field */
+.fip-field {
+  display: flex;
+  gap: 8px;
+}
+.fip-input {
+  flex: 1;
+  background: var(--bg-base);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  transition: border-color .15s;
+}
+.fip-input:focus { outline: none; border-color: var(--accent); }
+
+.fip-field-group { display: flex; flex-direction: column; gap: 4px; }
+.fip-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .3px; }
+.fip-select {
+  background: var(--bg-base);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 7px 10px;
+  font-size: 13px;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.fip-select:focus { outline: none; border-color: var(--accent); }
+
+/* Buttons */
+.fip-btn-search {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+.fip-btn-search:hover:not(:disabled) { opacity: 0.85; }
+.fip-btn-search:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.fip-btn-danger {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1.5px solid #fca5a5;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.fip-btn-danger:hover:not(:disabled) { background: #fecaca; }
+.fip-btn-danger:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.fip-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity .15s;
+}
+.fip-btn-primary:hover:not(:disabled) { opacity: 0.85; }
+.fip-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.fip-btn-sm-danger {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+}
+.fip-btn-sm-danger:hover { background: #fecaca; }
+
+/* IP link in table */
+.fip-ip-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+.fip-ip-link:hover { opacity: 0.8; }
+
+/* Section label */
+.fip-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+/* Messages */
+.fip-msg {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+}
+.fip-msg.ok  { background: var(--success-light); color: var(--success); }
+.fip-msg.err { background: #fee2e2; color: #dc2626; }
+
+/* Results empty */
+.fip-results { min-height: 300px; }
+.fip-empty {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.fip-empty p { font-size: 13px; max-width: 400px; line-height: 1.6; }

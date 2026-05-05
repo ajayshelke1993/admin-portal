@@ -1,0 +1,113 @@
+/* App.css */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Main layout shell ── */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Content area — offset by sidebar width ── */
+.content {
+  margin-left: 240px;
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  overflow-y: auto;
+  transition: margin-left .28s cubic-bezier(.4,0,.2,1);
+}
+
+/* When sidebar is collapsed, shrink the offset */
+/* .content.sidebar-collapsed {
+  margin-left: 64px;
+} */
+
+/* ── Login page ── */
+.login-container {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 36px 32px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.login-container h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.login-container label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.login-container input {
+  height: 40px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+}
+.login-container input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79,110,247,.12);
+  background: #fff;
+}
+.login-container button {
+  margin-top: 8px;
+  height: 42px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s, transform .15s;
+}
+.login-container button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+.error {
+  color: var(--danger);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ── Global button reset (don't let old button styles bleed in) ── */
+button {
+  font-family: var(--font-sans);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0 !important;
+    padding-top: 60px; /* space for hamburger */
+  }
+}
