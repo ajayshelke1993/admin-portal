@@ -330,7 +330,7 @@ app.get('/api/dashboard/stats', (req, res) => res.json({
 
 // ── Serve React build ─────────────────────────────────────────────────
 app.use(express.static(join(__dirname, 'dist')));
-app.get('*', (req, res) => {
+app.get('/{*splat}', (req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
