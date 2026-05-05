@@ -13,7 +13,7 @@ const REPORT_TYPES = [
 export default function LogAnalyzer() {
   const [activeReport, setActiveReport] = useState('ip_hits');
   const [minHits, setMinHits]           = useState(500);
-  const [excludeIp, setExcludeIp]       = useState('147.0.242.114');
+  const [excludeIp, setExcludeIp]       = useState('0.0.0.0');
   const [running, setRunning]           = useState(false);
   const [results, setResults]           = useState(null);
   const [error, setError]               = useState('');
@@ -223,7 +223,7 @@ export default function LogAnalyzer() {
               <div className="la-field">
                 <label className="la-label">Exclude IP</label>
                 <input type="text" className="la-input" value={excludeIp}
-                  onChange={e => setExcludeIp(e.target.value)} placeholder="e.g. 147.0.242.114" />
+                  onChange={e => setExcludeIp(e.target.value)} placeholder="e.g. 192.168.0.1" />
               </div>
               <button className="la-run-btn" onClick={runQuery} disabled={running || selectedFiles.length === 0}>
                 {running ? <><div className="la-spinner" /> Running…</> : <>▶ Run Query ({selectedFiles.length} file{selectedFiles.length !== 1 ? 's' : ''})</>}
