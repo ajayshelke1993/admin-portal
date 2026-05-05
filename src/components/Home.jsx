@@ -9,12 +9,11 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 const QUICK_LINKS = [
   { label: 'Web Orders',     to: '/web-orders',       icon: '🛒', desc: 'View & manage incoming orders' },
   { label: 'Update Parts',   to: '/update-parts',     icon: '✏️', desc: 'Edit product part details' },
-  { label: 'Distribution Mapping',  to: '/distribution-mapping',  icon: '🗺️', adminOnly: false  },
+  { label: 'Log Analyzer',  to: '/log-analyzer',  icon: '📋', adminOnly: false  },
   { label: 'Blogs',          to: '/blog-admin',       icon: '📝', desc: 'Manage Blogs' },
   { label: 'SEO',                   to: '/vendor-seo',            icon: '🔍',  adminOnly: false },
   { label: 'Customer Comments',     to: '/customer-comments',     icon: '💬',  adminOnly: false  },
-  { label: 'Tab Pages',      to: '/tab-pages',        icon: '📑', desc: 'Manage storefront tabs' },
-  { label: 'Order Tracking', to: '/order-tracking',   icon: '📍', desc: 'Track shipment status' },
+  
 ];
 
 const Home = () => {

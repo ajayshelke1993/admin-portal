@@ -20,7 +20,7 @@ const WebOrders = () => {
   const [allOrdersMode, setAllOrdersMode]       = useState(false);
   const [savedShowDeleted, setSavedShowDeleted] = useState(false);
   const [customerIdFilter, setCustomerIdFilter] = useState(''); // actual customer ID being searched
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const scrollToTop    = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   const scrollToBottom = () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });

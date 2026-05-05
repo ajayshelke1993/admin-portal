@@ -160,7 +160,7 @@ app.get('/api/fraud-ip/attempts', (req, res) => {
 
 // ── Parts ─────────────────────────────────────────────────────────────
 const PARTS = Array.from({ length: 50 }, (_, i) => ({
-  vendor_part_no: `PART-${String(i+1).padStart(4,'0')}`,
+  vendor_part_no: `PART${String(i+1).padStart(4,'0')}`,
   vendorid:       100 + (i % 10),
   vendor:         ['Cisco','HP','Dell','Lenovo','Samsung','Apple','Sony','LG','Asus','Acer'][i%10],
   imagethumb:     null,

@@ -11,7 +11,6 @@ import TabPages from './components/TabPages';
 import EditParts from './components/EditParts';
 import BlogAdmin from './components/BlogAdmin';
 import BannerAdmin from './components/BannerAdmin';
-import CategorySEO from './components/CategorySEO';
 import CustomerComments from './components/CustomerComments';
 import FraudIPs from './components/FraudIPs';
 import LogAnalyzer from './components/LogAnalyzer';
@@ -82,7 +81,7 @@ const AppRoutes = () => {
             <Route path="/rma-inquiries"                  element={<ProtectedRoute><ComingSoon name="RMA Inquiries" /></ProtectedRoute>} />
             <Route path="/rma-inquiries/:email"           element={<ProtectedRoute><ComingSoon name="RMA Detail" /></ProtectedRoute>} />
             <Route path="/vendor-seo"                     element={<ProtectedRoute><ComingSoon name="Vendor SEO" /></ProtectedRoute>} />
-            <Route path="/category-seo"                   element={<ProtectedRoute><CategorySEO /></ProtectedRoute>} />
+            <Route path="/category-seo"                   element={<ProtectedRoute><ComingSoon name="Category SEO" /></ProtectedRoute>} />
             <Route path="/vendor-banner-seo/:vendorId"    element={<ProtectedRoute><ComingSoon name="Vendor Banner SEO" /></ProtectedRoute>} />
             <Route path="/reports"                        element={<ProtectedRoute><OperationsReport /></ProtectedRoute>} />
             <Route path="*"                               element={<Navigate to="/login" />} />

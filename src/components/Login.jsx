@@ -46,6 +46,8 @@ const Login = () => {
       {error && <div className="error">{error}</div>}
       <form onSubmit={handleSubmit}>
         <div>
+          <h6>USERNAME: admin , PASSWORD: admin123</h6>
+          <h6>USERNAME: staff , PASSWORD: staff123</h6>
           <label htmlFor="username">Username: {console.log(import.meta.env)}</label>
           <input
             type="text"
