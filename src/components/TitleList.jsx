@@ -59,7 +59,7 @@ const TitleList = () => {
         <div className="sb-logo">
           {!collapsed && (
             <a href="https://ajayshelke.onrender.com/">
-              <img src="https://aichat-3snt.onrender.com/mylogo.png" alt="your-site-logo" className="sb-logo-img" />
+              <img src="/ajay.png" alt="your-site-logo" className="sb-logo-img" />
               
             </a>
           )}

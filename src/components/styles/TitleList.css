@@ -34,7 +34,7 @@
 }
 .sb-logo-img {
   max-width: 150px;
-  max-height: 40px;
+  max-height: 80px;
   object-fit: contain;
   transition: opacity .2s;
 }
