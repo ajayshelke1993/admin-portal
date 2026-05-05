@@ -6,13 +6,13 @@ const BASE_URL   = import.meta.env.VITE_API_URL;
 const BANNER_URL = '';
 
 const AUTHORS = [
-  { value: 'Dean Bellone',  label: 'Dean Bellone'  },
-  { value: 'Mason Maynard', label: 'Mason Maynard' },
+  { value: 'John Doe',  label: 'John Doe'  },
+  { value: 'Sara Lee', label: 'Sara Lee' },
 ];
 
 const AUTHOR_FOOTERS = {
-  'Dean Bellone':  `<section style="margin-top:40px"><hr style="border:1px solid #ccc;margin-bottom:20px"><h3>About the Author</h3><div style="display:flex;align-items:center"><img src="https://www.your-site.com/mscs_images/authors/DeanBW 1.jpg" alt="Dean Bellone" width="120" height="120" style="border-radius:50%;margin-right:20px"><div><h4>Dean Bellone</h4><p>Dean Bellone is the CEO of your-site. With over 35 years of experience, Dean is passionate about innovation and delivering top-tier customer service.</p><p>Connect: <a href="https://www.linkedin.com/in/dean-bellone-53613645/" target="_blank">LinkedIn</a></p></div></div></section>`,
-  'Mason Maynard': `<section style="margin-top:40px"><hr style="border:1px solid #ccc;margin-bottom:20px"><h3>About the Author</h3><div style="display:flex;align-items:center"><img src="https://www.your-site.com/mscs_images/authors/mason.jpg" alt="Mason Maynard" width="120" height="120" style="border-radius:50%;margin-right:20px"><div><h4>Mason Maynard</h4><p>Mason Maynard is passionate about Marketing and Sales, thriving on creating impactful strategies that engage audiences.</p><p>Connect: <a href="https://www.linkedin.com/in/mason-maynard-ab3987329/" target="_blank">LinkedIn</a></p></div></div></section>`,
+  'John Doe':  `<section style="margin-top:40px"><hr style="border:1px solid #ccc;margin-bottom:20px"><h3>About the Author</h3><div style="display:flex;align-items:center"><img src="https://www.your-site.com/mscs_images/authors/image.jpg" alt="John Doe" width="120" height="120" style="border-radius:50%;margin-right:20px"><div><h4>John Doe</h4><p>John Doe is the CEO of your-site. With over 35 years of experience, John is passionate about innovation and delivering top-tier customer service.</p><p>Connect: <a href="https://www.linkedin.com/in/John-Doe-53613645/" target="_blank">LinkedIn</a></p></div></div></section>`,
+  'Sara Lee': `<section style="margin-top:40px"><hr style="border:1px solid #ccc;margin-bottom:20px"><h3>About the Author</h3><div style="display:flex;align-items:center"><img src="https://www.your-site.com/mscs_images/authors/sara.jpg" alt="Sara Lee" width="120" height="120" style="border-radius:50%;margin-right:20px"><div><h4>Sara Lee</h4><p>Sara Lee is passionate about Marketing and Sales, thriving on creating impactful strategies that engage audiences.</p><p>Connect: <a href="https://www.linkedin.com/in/sara-lee-ab3987329/" target="_blank">LinkedIn</a></p></div></div></section>`,
 };
 
 const emptyForm = { blogID: '', title: '', slug: '', author: '', content: '', bannerImage: '', authorFooter: '' };
