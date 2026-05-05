@@ -86,6 +86,11 @@ const AppRoutes = () => {
             <Route path="/reports"                        element={<ProtectedRoute><OperationsReport /></ProtectedRoute>} />
             <Route path="*"                               element={<Navigate to="/login" />} />
           </Routes>
+          {isAuthenticated && (
+            <footer className="app-footer">
+              © 2026 Ajay Shelke. All rights reserved.
+            </footer>
+          )}
         </div>
       </div>
     </>
