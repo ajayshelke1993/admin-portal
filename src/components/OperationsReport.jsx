@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-const API = import.meta.env.VITE_API_URL || 'http://192.168.88.77:5000';
+const API = import.meta.env.VITE_API_URL ?? '';
 
 const C = {
   green:'#1D9E75', red:'#E24B4A', amber:'#EF9F27', blue:'#378ADD',
