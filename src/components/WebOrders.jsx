@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './styles/Globals.css';
+import './styles/globals.css';
 import './styles/WebOrders.css';
 import PaymentMiniChart from './PaymentMiniChart';
 
