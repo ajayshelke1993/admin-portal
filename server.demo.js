@@ -334,10 +334,14 @@ app.get('/{*splat}', (req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🚀 Your-site Admin Portal — DEMO SERVER`);
-  console.log(`   Running at http://localhost:${PORT}`);
-  console.log(`\n📋 Demo credentials:`);
-  console.log(`   Admin: admin / admin123`);
-  console.log(`   Staff: staff / staff123\n`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n🚀 Your-site Admin Portal — DEMO SERVER`);
+    console.log(`   Running at http://localhost:${PORT}`);
+    console.log(`\n📋 Demo credentials:`);
+    console.log(`   Admin: admin / admin123`);
+    console.log(`   Staff: staff / staff123\n`);
+  });
+}
+
+export default app;
